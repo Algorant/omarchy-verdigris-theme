@@ -1,0 +1,39 @@
+# Verdigris for Omarchy. Source colors: ../css/palette.json (0.1.2).
+# The near-black base follows the Ghostty, Pi, and btop ports; ashbronze is
+# reserved for selection and weathered-metal accents rather than full panels.
+mode = "dark"
+
+accent = "#8ec07c"            # fern
+selection = "#665c54"         # ashbronze
+muted = "#928374"             # readable muted text used in existing ports
+
+background = "#1d2021"        # shared dark UI base
+# Derived surfaces keep the same temperature without flattening the UI.
+dark_background = "#171a1a"
+darker_background = "#121515"
+lighter_background = "#292d2a"
+
+foreground = "#f2d6a2"        # warmer cream trial derived from vellum
+dark_foreground = "#928374"   # secondary text
+light_foreground = "#d4be9a"  # soft light text used by existing ports
+bright_foreground = "#f2d6a2"
+
+# Omarchy needs semantic and ANSI slots beyond Verdigris's six core colors.
+# The extended set supplies teal, deep copper, and ink violet. Red uses the
+# Ghostty port's bright error tone: oxblood is too dark for error text on this
+# background. Blue/green brighten in their bright ANSI slots.
+red = "#fb4934"
+yellow = "#e6bf86"            # ochre
+orange = "#b9805f"            # deep-copper
+green = "#689d6a"             # patina
+cyan = "#83a598"              # aqua
+blue = "#458588"              # teal
+magenta = "#8989b0"           # ink-violet
+brown = "#665c54"             # ashbronze
+
+bright_red = "#fb4934"
+bright_yellow = "#e6bf86"
+bright_green = "#8ec07c"      # fern
+bright_cyan = "#83a598"
+bright_blue = "#83a598"       # aqua
+bright_magenta = "#8989b0"
