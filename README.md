@@ -14,6 +14,17 @@ omarchy dev theme preview ~/.config/omarchy/themes/verdigris/colors.toml
 omarchy theme set verdigris
 ```
 
+### OLED variant
+
+[`oled/colors.toml`](./oled/colors.toml) is the same theme with the warmer cream foreground `#f2d6a2`, for OLED panels where vellum reads too cool (x1nano). Install it as a second theme and pick it per machine:
+
+```sh
+mkdir -p ~/.config/omarchy/themes/verdigris-oled/backgrounds
+cp ~/Projects/verdigris/omarchy/oled/colors.toml ~/.config/omarchy/themes/verdigris-oled/
+cp ~/Projects/verdigris/omarchy/backgrounds/verdigris.png ~/.config/omarchy/themes/verdigris-oled/backgrounds/
+omarchy theme set verdigris-oled
+```
+
 If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-copy modified files and re-run `omarchy theme set verdigris` after palette or background changes. `omarchy theme set gruvbox` restores the previous stock theme. The active wallpaper can be cycled or replaced independently via `omarchy theme bg`.
 
 ## Palette mapping
@@ -21,7 +32,7 @@ If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-co
 | Omarchy role | Verdigris source / choice | Reason |
 | --- | --- | --- |
 | Background | `#1d2021` | Dark reading surface shared with Ghostty, Pi, and btop ports; ashbronze is too bright for a full-screen dark UI. |
-| Foreground | warm cream trial `#f2d6a2`, derived from vellum `#ebdbb2` | Warmer on-screen text; keep canonical vellum unchanged until this trial is approved. |
+| Foreground | vellum `#ebdbb2` (OLED variant: warm cream `#f2d6a2`) | Canonical text color, matching the other ports. On OLED panels vellum read too cool, so `oled/` keeps the warmer cream. |
 | Accent | fern `#8ec07c` | Bright primary highlight, matching the Pi port. |
 | Selection / brown | ashbronze `#665c54` | Weathered-metal accent and selection background. |
 | Green / bright green | patina `#689d6a` / fern `#8ec07c` | Quiet versus bright green. |
@@ -30,7 +41,7 @@ If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-co
 | Magenta | ink-violet `#8989b0` | Rare special/ANSI accent. |
 | Red | `#fb4934` | The existing Ghostty port's readable red; canonical oxblood `#74363d` is too dark for error text on the base background. |
 
-Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follow existing Verdigris app ports. The foreground is currently a **theme-specific warmth trial**, not a change to canonical vellum; other ports still use `#ebdbb2`. No canonical colors in `css/palette.json` are changed here. Omarchy generates application settings (including Ghostty, shell, btop, Pi, Obsidian and a Neovim fallback) from this theme. App-specific Verdigris ports and the standalone [`verdigris.nvim`](https://github.com/Algorant/verdigris.nvim) remain independent; review their integration before forcing Omarchy's generated styling over a separately configured app. In particular, Ghostty's Omarchy `config-file` loads the generated palette, whereas the dotfiles' Ghostty theme may explicitly set another palette. Pick one owner when deploying dotfiles.
+Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follow existing Verdigris app ports. The foreground is canonical vellum `#ebdbb2`, like the other ports. The warmer `#f2d6a2` trial lives on as the OLED variant. No canonical colors in `css/palette.json` are changed here. Omarchy generates application settings (including Ghostty, shell, btop, Pi, Obsidian and a Neovim fallback) from this theme. App-specific Verdigris ports and the standalone [`verdigris.nvim`](https://github.com/Algorant/verdigris.nvim) remain independent; review their integration before forcing Omarchy's generated styling over a separately configured app. In particular, Ghostty's Omarchy `config-file` loads the generated palette, whereas the dotfiles' Ghostty theme may explicitly set another palette. Pick one owner when deploying dotfiles.
 
 ## Wallpaper
 

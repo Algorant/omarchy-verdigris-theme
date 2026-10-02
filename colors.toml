@@ -13,10 +13,10 @@ dark_background = "#171a1a"
 darker_background = "#121515"
 lighter_background = "#292d2a"
 
-foreground = "#f2d6a2"        # warmer cream trial derived from vellum
+foreground = "#ebdbb2"        # vellum (canonical); OLED panels: oled/colors.toml
 dark_foreground = "#928374"   # secondary text
 light_foreground = "#d4be9a"  # soft light text used by existing ports
-bright_foreground = "#f2d6a2"
+bright_foreground = "#ebdbb2"
 
 # Omarchy needs semantic and ANSI slots beyond Verdigris's six core colors.
 # The extended set supplies teal, deep copper, and ink violet. Red uses the
