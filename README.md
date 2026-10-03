@@ -1,6 +1,6 @@
 # Verdigris for Omarchy
 
-This is the Verdigris **Omarchy theme port**. The canonical identity and extended palette live in [`../css/palette.json`](../css/palette.json) (version 0.1.2); `colors.toml` maps them into Omarchy's semantic/ANSI slots. The wallpaper is a simple, generated 2560×1440 PNG using Verdigris colors. No bundled Omarchy files need to be edited.
+This is the Verdigris **Omarchy theme port**. The canonical identity and extended palette live in [`../css/palette.json`](../css/palette.json) (version 0.1.2); `colors.toml` maps them into Omarchy's semantic/ANSI slots. The theme ships two 5120×2880 Verdigris triptych wallpapers of the Omarchy mark. No bundled Omarchy files need to be edited.
 
 ## Install or update locally
 
@@ -9,7 +9,7 @@ Do **not** run `omarchy theme install` on the root of this repository: it contai
 ```sh
 mkdir -p ~/.config/omarchy/themes/verdigris/backgrounds
 cp ~/Projects/verdigris/omarchy/colors.toml ~/.config/omarchy/themes/verdigris/
-cp ~/Projects/verdigris/omarchy/backgrounds/verdigris.png ~/.config/omarchy/themes/verdigris/backgrounds/
+cp ~/Projects/verdigris/omarchy/backgrounds/*.png ~/.config/omarchy/themes/verdigris/backgrounds/
 omarchy dev theme preview ~/.config/omarchy/themes/verdigris/colors.toml
 omarchy theme set verdigris
 ```
@@ -21,7 +21,7 @@ omarchy theme set verdigris
 ```sh
 mkdir -p ~/.config/omarchy/themes/verdigris-oled/backgrounds
 cp ~/Projects/verdigris/omarchy/oled/colors.toml ~/.config/omarchy/themes/verdigris-oled/
-cp ~/Projects/verdigris/omarchy/backgrounds/verdigris.png ~/.config/omarchy/themes/verdigris-oled/backgrounds/
+cp ~/Projects/verdigris/omarchy/backgrounds/*.png ~/.config/omarchy/themes/verdigris-oled/backgrounds/
 omarchy theme set verdigris-oled
 ```
 
@@ -45,4 +45,11 @@ Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follo
 
 ## Wallpaper
 
-`backgrounds/verdigris.png` is a deliberately quiet dark gradient and low-contrast patina/ashbronze/aqua circles, generated for this port with ImageMagick. It is a starting point, not a canonical Verdigris color specification. Replace or supplement it with other PNG/JPEG/WebP wallpapers (mind image rights) as desired.
+The two wallpapers in `backgrounds/` show the Omarchy mark three times, in canonical palette colors on the theme base `#1d2021`:
+
+| File | Left · centre · right |
+| --- | --- |
+| `verdigris-triptych-1-patina-vellum-aqua.png` | patina `#689d6a` · vellum `#ebdbb2` · aqua `#83a598` |
+| `verdigris-triptych-2-moss-vellum-aqua.png` | moss `#70764a` · vellum `#ebdbb2` · aqua `#83a598` |
+
+They are 5120×2880 and pixel-exact: the mark is redrawn from its 15×15 cell grid at an integer cell size, with no anti-aliasing or scaling blur. Omarchy sorts a theme's backgrounds by filename, so the numeric prefix makes triptych 1 the default when the theme is set. `omarchy theme bg next` cycles to triptych 2. Before 2026-10-02, the theme used a quiet gradient wallpaper (`verdigris.png`, still in git history). Add other PNG/JPEG/WebP wallpapers (mind image rights) as desired.
