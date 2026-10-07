@@ -14,16 +14,9 @@ omarchy dev theme preview ~/.config/omarchy/themes/verdigris/colors.toml
 omarchy theme set verdigris
 ```
 
-### OLED variant
+### OLED panels
 
-[`oled/colors.toml`](./oled/colors.toml) is the same theme with the warmer cream foreground `#f2d6a2`, for OLED panels where vellum reads too cool (x1nano). Install it as a second theme and pick it per machine:
-
-```sh
-mkdir -p ~/.config/omarchy/themes/verdigris-oled/backgrounds
-cp ~/Projects/verdigris/omarchy/oled/colors.toml ~/.config/omarchy/themes/verdigris-oled/
-cp ~/Projects/verdigris/omarchy/backgrounds/*.png ~/.config/omarchy/themes/verdigris-oled/backgrounds/
-omarchy theme set verdigris-oled
-```
+On OLED panels vellum can read too cool. There, set `foreground` and `bright_foreground` in the installed `colors.toml` to the warmer cream `#f2d6a2` and re-run `omarchy theme set verdigris`. Keep one `verdigris` theme per machine rather than a second theme: its wallpapers and per-theme backgrounds folder stay shared. (Algorant's Omarchy setup renders this one value per machine with a mise template.)
 
 If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-copy modified files and re-run `omarchy theme set verdigris` after palette or background changes. `omarchy theme set gruvbox` restores the previous stock theme. The active wallpaper can be cycled or replaced independently via `omarchy theme bg`.
 
@@ -32,7 +25,7 @@ If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-co
 | Omarchy role | Verdigris source / choice | Reason |
 | --- | --- | --- |
 | Background | `#1d2021` | Dark reading surface shared with Ghostty, Pi, and btop ports; ashbronze is too bright for a full-screen dark UI. |
-| Foreground | vellum `#ebdbb2` (OLED variant: warm cream `#f2d6a2`) | Canonical text color, matching the other ports. On OLED panels vellum read too cool, so `oled/` keeps the warmer cream. |
+| Foreground | vellum `#ebdbb2` (OLED panels: warm cream `#f2d6a2`) | Canonical text color, matching the other ports. On OLED panels vellum read too cool, so they override it with the warmer cream. |
 | Accent | fern `#8ec07c` | Bright primary highlight, matching the Pi port. |
 | Selection / brown | ashbronze `#665c54` | Weathered-metal accent and selection background. |
 | Green / bright green | patina `#689d6a` / fern `#8ec07c` | Quiet versus bright green. |
@@ -41,7 +34,7 @@ If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-co
 | Magenta | ink-violet `#8989b0` | Rare special/ANSI accent. |
 | Red | `#fb4934` | The existing Ghostty port's readable red; canonical oxblood `#74363d` is too dark for error text on the base background. |
 
-Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follow existing Verdigris app ports. The foreground is canonical vellum `#ebdbb2`, like the other ports. The warmer `#f2d6a2` trial lives on as the OLED variant. No canonical colors in `css/palette.json` are changed here. Omarchy generates application settings (including Ghostty, shell, btop, Pi, Obsidian and a Neovim fallback) from this theme. App-specific Verdigris ports and the standalone [`verdigris.nvim`](https://github.com/Algorant/verdigris.nvim) remain independent; review their integration before forcing Omarchy's generated styling over a separately configured app. In particular, Ghostty's Omarchy `config-file` loads the generated palette, whereas the dotfiles' Ghostty theme may explicitly set another palette. Pick one owner when deploying dotfiles.
+Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follow existing Verdigris app ports. The foreground is canonical vellum `#ebdbb2`, like the other ports. The warmer `#f2d6a2` trial lives on as the OLED override. No canonical colors in `css/palette.json` are changed here. Omarchy generates application settings (including Ghostty, shell, btop, Pi, Obsidian and a Neovim fallback) from this theme. App-specific Verdigris ports and the standalone [`verdigris.nvim`](https://github.com/Algorant/verdigris.nvim) remain independent; review their integration before forcing Omarchy's generated styling over a separately configured app. In particular, Ghostty's Omarchy `config-file` loads the generated palette, whereas the dotfiles' Ghostty theme may explicitly set another palette. Pick one owner when deploying dotfiles.
 
 ## Wallpaper
 

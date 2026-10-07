@@ -13,7 +13,7 @@ dark_background = "#171a1a"
 darker_background = "#121515"
 lighter_background = "#292d2a"
 
-foreground = "#ebdbb2"        # vellum (canonical); OLED panels: oled/colors.toml
+foreground = "#ebdbb2"        # vellum (canonical); OLED panels: #f2d6a2 (README)
 dark_foreground = "#928374"   # secondary text
 light_foreground = "#d4be9a"  # soft light text used by existing ports
 bright_foreground = "#ebdbb2"
