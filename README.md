@@ -1,6 +1,6 @@
 # Verdigris for Omarchy
 
-![Verdigris triptych wallpaper](backgrounds/verdigris-triptych-1-patina-vellum-aqua.png)
+![Verdigris triptych wallpaper](backgrounds/00-verdigris-triptych-1-patina-vellum-aqua.png)
 
 [Verdigris](https://github.com/Algorant/verdigris) is a small oxidized-copper palette: weathered bronze, warm vellum, patina greens, cool aqua, brass ochre. This repository is its [Omarchy](https://omarchy.org/) theme.
 
@@ -20,12 +20,12 @@ The theme ships only `colors.toml` and `backgrounds/`. It has no terminal config
 
 **Added by this theme, beyond that colour inheritance:**
 
-- **Wallpapers:** two 5120×2880 pixel-exact triptychs of the Omarchy mark, in canonical palette colours on the theme base `#1d2021`. Triptych 1 is the default; `omarchy theme bg next` cycles to triptych 2.
+- **Wallpapers:** the default is triptych 1, a 5120×2880 pixel-exact triptych of the Omarchy mark in canonical palette colours on the theme base `#1d2021`. The alternates are triptych 2 and 26 wallpapers recoloured to Verdigris (`01-…` to `30-…`, each 4K or smaller, tagged `cool` or `vivid`). `omarchy theme bg next` (`Super+B`) cycles through them in filename order.
 
   | File | Left · centre · right |
   | --- | --- |
-  | `verdigris-triptych-1-patina-vellum-aqua.png` | patina `#689d6a` · vellum `#ebdbb2` · aqua `#83a598` |
-  | `verdigris-triptych-2-moss-vellum-aqua.png` | moss `#70764a` · vellum `#ebdbb2` · aqua `#83a598` |
+  | `00-verdigris-triptych-1-patina-vellum-aqua.png` | patina `#689d6a` · vellum `#ebdbb2` · aqua `#83a598` |
+  | `00-verdigris-triptych-2-moss-vellum-aqua.png` | moss `#70764a` · vellum `#ebdbb2` · aqua `#83a598` |
 
 - **A hand-mapped palette:** each Omarchy slot is chosen from the Verdigris palette rather than generated (see [Palette mapping](#palette-mapping)).
 
@@ -64,7 +64,7 @@ Muted text `#928374`, soft light text `#d4be9a` and the derived dark surfaces fo
 
 ## Wallpaper notes
 
-The mark is redrawn from its 15×15 cell grid at an integer cell size, with no anti-aliasing or scaling blur. Omarchy sorts a theme's backgrounds by filename, so the numeric prefix sets the default. Before 2026-10-02 the theme used a quiet gradient wallpaper (`verdigris.png`, still in this repository's history).
+The mark is redrawn from its 15×15 cell grid at an integer cell size, with no anti-aliasing or scaling blur. Omarchy sorts a theme's backgrounds by path. Setting the theme from another theme picks the first, so the `00-` prefix makes triptych 1 the default; re-setting Verdigris while it's already active advances to the next wallpaper instead. Before 2026-10-02 the theme used a quiet gradient wallpaper (`verdigris.png`, still in this repository's history).
 
 ## History
 
