@@ -33,7 +33,16 @@ The theme ships only `colors.toml` and `backgrounds/`. It has no terminal config
 
 ## OLED panels
 
-On OLED panels vellum can read too cool. There, set `foreground` and `bright_foreground` in `~/.config/omarchy/themes/verdigris/colors.toml` to the warmer cream `#f2d6a2`, then run `omarchy theme set verdigris`. This local edit leaves the clone dirty, so `omarchy theme update` may refuse to pull until you `git -C ~/.config/omarchy/themes/verdigris stash` it first.
+On OLED panels vellum can read too cool. There, set `foreground` and `bright_foreground` in `~/.config/omarchy/themes/verdigris/colors.toml` to the warmer cream `#f2d6a2`. Keep the change as a local commit so updates replay it:
+
+```sh
+cd ~/.config/omarchy/themes/verdigris
+git config pull.rebase true
+git commit -am "Local: foreground #f2d6a2 for OLED"
+omarchy theme set verdigris
+```
+
+`omarchy theme update` then rebases the local commit onto new versions.
 
 ## Palette mapping
 
