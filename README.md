@@ -1,48 +1,62 @@
 # Verdigris for Omarchy
 
-This is the Verdigris **Omarchy theme port**. The canonical identity and extended palette live in [`../css/palette.json`](../css/palette.json) (version 0.1.2); `colors.toml` maps them into Omarchy's semantic/ANSI slots. The theme ships two 5120×2880 Verdigris triptych wallpapers of the Omarchy mark. No bundled Omarchy files need to be edited.
+![Verdigris triptych wallpaper](backgrounds/verdigris-triptych-1-patina-vellum-aqua.png)
 
-## Install or update locally
+[Verdigris](https://github.com/Algorant/verdigris) is a small oxidized-copper palette: weathered bronze, warm vellum, patina greens, cool aqua, brass ochre. This repository is its [Omarchy](https://omarchy.org/) theme.
 
-Do **not** run `omarchy theme install` on the root of this repository: it contains many application ports, not an Omarchy theme at its top level. Copy only this directory's theme files into your user theme directory:
+## Install
 
 ```sh
-mkdir -p ~/.config/omarchy/themes/verdigris/backgrounds
-cp ~/Projects/verdigris/omarchy/colors.toml ~/.config/omarchy/themes/verdigris/
-cp ~/Projects/verdigris/omarchy/backgrounds/*.png ~/.config/omarchy/themes/verdigris/backgrounds/
-omarchy dev theme preview ~/.config/omarchy/themes/verdigris/colors.toml
-omarchy theme set verdigris
+omarchy theme install https://github.com/Algorant/omarchy-verdigris-theme
 ```
 
-### OLED panels
+The theme installs and appears as `verdigris`. `omarchy theme update` pulls new versions, and `omarchy theme remove verdigris` uninstalls it.
 
-On OLED panels vellum can read too cool. There, set `foreground` and `bright_foreground` in the installed `colors.toml` to the warmer cream `#f2d6a2` and re-run `omarchy theme set verdigris`. Keep one `verdigris` theme per machine rather than a second theme: its wallpapers and per-theme backgrounds folder stay shared. (Algorant's Omarchy setup renders this one value per machine with a mise template.)
+The theme ships only `colors.toml` and `backgrounds/`. It has no terminal configs, `.lua` files or `vscode.json`, which Omarchy refuses from themes installed from git, so it installs with no dropped files.
 
-If your checkout is elsewhere, replace `~/Projects/verdigris` accordingly. Re-copy modified files and re-run `omarchy theme set verdigris` after palette or background changes. `omarchy theme set gruvbox` restores the previous stock theme. The active wallpaper can be cycled or replaced independently via `omarchy theme bg`.
+## What gets themed
+
+**By Omarchy, from `colors.toml`:** when the theme is set, Omarchy generates its standard theme files from the palette. That covers Hyprland borders, the Omarchy shell and bar, the Alacritty, Ghostty, Kitty and Foot terminals, btop, gum, Chromium, Helix, VS Code, Obsidian, Pi, Claude Code, T3 Code, Hermes, keyboard RGB and an Omarchy-default Neovim colorscheme.
+
+**Added by this theme, beyond that colour inheritance:**
+
+- **Wallpapers:** two 5120×2880 pixel-exact triptychs of the Omarchy mark, in canonical palette colours on the theme base `#1d2021`. Triptych 1 is the default; `omarchy theme bg next` cycles to triptych 2.
+
+  | File | Left · centre · right |
+  | --- | --- |
+  | `verdigris-triptych-1-patina-vellum-aqua.png` | patina `#689d6a` · vellum `#ebdbb2` · aqua `#83a598` |
+  | `verdigris-triptych-2-moss-vellum-aqua.png` | moss `#70764a` · vellum `#ebdbb2` · aqua `#83a598` |
+
+- **A hand-mapped palette:** each Omarchy slot is chosen from the Verdigris palette rather than generated (see [Palette mapping](#palette-mapping)).
+
+**Dedicated Verdigris ports, installed separately:** Omarchy doesn't theme these apps, or themes them only generically. Their ports live in the [Verdigris repository](https://github.com/Algorant/verdigris#readme): Neovim ([verdigris.nvim](https://github.com/Algorant/verdigris.nvim), replacing Omarchy's generated fallback), Starship, lsd, Atuin, bat, Yazi, ncspot, Herdr, and dedicated Pi, Claude Code, btop, Ghostty and Obsidian themes. Where you install a dedicated port, pick one owner per app so it doesn't fight Omarchy's generated file. For example, Ghostty's Omarchy `config-file` loads the generated palette.
+
+## OLED panels
+
+On OLED panels vellum can read too cool. There, set `foreground` and `bright_foreground` in `~/.config/omarchy/themes/verdigris/colors.toml` to the warmer cream `#f2d6a2`, then run `omarchy theme set verdigris`. This local edit leaves the clone dirty, so `omarchy theme update` may refuse to pull until you `git -C ~/.config/omarchy/themes/verdigris stash` it first.
 
 ## Palette mapping
 
+Colours come from the canonical Verdigris palette ([`css/palette.json`](https://github.com/Algorant/verdigris/blob/main/css/palette.json), version 0.1.2).
+
 | Omarchy role | Verdigris source / choice | Reason |
 | --- | --- | --- |
-| Background | `#1d2021` | Dark reading surface shared with Ghostty, Pi, and btop ports; ashbronze is too bright for a full-screen dark UI. |
-| Foreground | vellum `#ebdbb2` (OLED panels: warm cream `#f2d6a2`) | Canonical text color, matching the other ports. On OLED panels vellum read too cool, so they override it with the warmer cream. |
+| Background | `#1d2021` | Dark reading surface shared with the Ghostty, Pi and btop ports; ashbronze is too bright for a full-screen dark UI. |
+| Foreground | vellum `#ebdbb2` (OLED: warm cream `#f2d6a2`) | Canonical text colour, matching the other ports. |
 | Accent | fern `#8ec07c` | Bright primary highlight, matching the Pi port. |
 | Selection / brown | ashbronze `#665c54` | Weathered-metal accent and selection background. |
 | Green / bright green | patina `#689d6a` / fern `#8ec07c` | Quiet versus bright green. |
 | Blue / bright blue | teal `#458588` / aqua `#83a598` | Secondary versus brighter cool accent. |
 | Yellow / orange | ochre `#e6bf86` / deep-copper `#b9805f` | Brass and copper roles. |
 | Magenta | ink-violet `#8989b0` | Rare special/ANSI accent. |
-| Red | `#fb4934` | The existing Ghostty port's readable red; canonical oxblood `#74363d` is too dark for error text on the base background. |
+| Red | `#fb4934` | The Ghostty port's readable red; canonical oxblood `#74363d` is too dark for error text on the base background. |
 
-Muted text `#928374`, soft light text `#d4be9a`, and derived dark surfaces follow existing Verdigris app ports. The foreground is canonical vellum `#ebdbb2`, like the other ports. The warmer `#f2d6a2` trial lives on as the OLED override. No canonical colors in `css/palette.json` are changed here. Omarchy generates application settings (including Ghostty, shell, btop, Pi, Obsidian and a Neovim fallback) from this theme. App-specific Verdigris ports and the standalone [`verdigris.nvim`](https://github.com/Algorant/verdigris.nvim) remain independent; review their integration before forcing Omarchy's generated styling over a separately configured app. In particular, Ghostty's Omarchy `config-file` loads the generated palette, whereas the dotfiles' Ghostty theme may explicitly set another palette. Pick one owner when deploying dotfiles.
+Muted text `#928374`, soft light text `#d4be9a` and the derived dark surfaces follow the existing Verdigris app ports.
 
-## Wallpaper
+## Wallpaper notes
 
-The two wallpapers in `backgrounds/` show the Omarchy mark three times, in canonical palette colors on the theme base `#1d2021`:
+The mark is redrawn from its 15×15 cell grid at an integer cell size, with no anti-aliasing or scaling blur. Omarchy sorts a theme's backgrounds by filename, so the numeric prefix sets the default. Before 2026-10-02 the theme used a quiet gradient wallpaper (`verdigris.png`, still in this repository's history).
 
-| File | Left · centre · right |
-| --- | --- |
-| `verdigris-triptych-1-patina-vellum-aqua.png` | patina `#689d6a` · vellum `#ebdbb2` · aqua `#83a598` |
-| `verdigris-triptych-2-moss-vellum-aqua.png` | moss `#70764a` · vellum `#ebdbb2` · aqua `#83a598` |
+## History
 
-They are 5120×2880 and pixel-exact: the mark is redrawn from its 15×15 cell grid at an integer cell size, with no anti-aliasing or scaling blur. Omarchy sorts a theme's backgrounds by filename, so the numeric prefix makes triptych 1 the default when the theme is set. `omarchy theme bg next` cycles to triptych 2. Before 2026-10-02, the theme used a quiet gradient wallpaper (`verdigris.png`, still in git history). Add other PNG/JPEG/WebP wallpapers (mind image rights) as desired.
+This theme was carved out of `omarchy/` in the Verdigris repository on 2026-10-12, with its history kept.

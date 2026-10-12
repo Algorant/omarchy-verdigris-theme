@@ -1,4 +1,4 @@
-# Verdigris for Omarchy. Source colors: ../css/palette.json (0.1.2).
+# Verdigris for Omarchy. Source colors: Algorant/verdigris css/palette.json (0.1.2).
 # The near-black base follows the Ghostty, Pi, and btop ports; ashbronze is
 # reserved for selection and weathered-metal accents rather than full panels.
 mode = "dark"
