@@ -34,7 +34,7 @@ Desktop and app previews in Verdigris.
 omarchy theme install https://github.com/Algorant/omarchy-verdigris-theme
 ```
 
-While this repository is private, anonymous HTTPS installs fail. Collaborators can authenticate over HTTPS with a credential helper or use the SSH URL `git@github.com:Algorant/omarchy-verdigris-theme.git`. The theme installs and appears as `verdigris`. `omarchy theme update` pulls new versions, and `omarchy theme remove verdigris` uninstalls it.
+This repository is public; the HTTPS install above works without authentication. The theme installs and appears as `verdigris`. `omarchy theme update` pulls new versions, and `omarchy theme remove verdigris` uninstalls it.
 
 The theme uses `colors.toml` and `backgrounds/`, with documentation and preview images alongside. It has no terminal configs, `.lua` files or `vscode.json`, which Omarchy refuses from themes installed from git, so it installs with no dropped files.
 
