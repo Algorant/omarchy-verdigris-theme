@@ -70,7 +70,7 @@ omarchy theme set verdigris
 
 ## Palette mapping
 
-Colours come from the canonical Verdigris palette ([`css/palette.json`](https://github.com/Algorant/verdigris/blob/main/css/palette.json), version 0.1.2).
+Colours come from the canonical Verdigris palette ([`css/palette.json`](https://github.com/Algorant/verdigris/blob/main/css/palette.json), version 0.2.0).
 
 | Omarchy role | Verdigris source / choice | Reason |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ Colours come from the canonical Verdigris palette ([`css/palette.json`](https://
 | Blue / bright blue | teal `#458588` / aqua `#83a598` | Secondary versus brighter cool accent. |
 | Yellow / orange | ochre `#e6bf86` / deep-copper `#b9805f` | Brass and copper roles. |
 | Magenta | ink-violet `#8989b0` | Rare special/ANSI accent. |
-| Red | `#fb4934` | The Ghostty port's readable red; canonical oxblood `#74363d` is too dark for error text on the base background. |
+| Red / bright red | oxblood-text `#c66f70` / oxblood-bright `#d47b7c` | Readable text tints of canonical oxblood `#74363d`, which remains the red for fills and bars. |
 
 Muted text `#928374`, soft light text `#d4be9a` and the derived dark surfaces follow the existing Verdigris app ports.
 

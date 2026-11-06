@@ -1,4 +1,4 @@
-# Verdigris for Omarchy. Source colors: Algorant/verdigris css/palette.json (0.1.2).
+# Verdigris for Omarchy. Source colors: Algorant/verdigris css/palette.json (0.2.0).
 # The near-black base follows the Ghostty, Pi, and btop ports; ashbronze is
 # reserved for selection and weathered-metal accents rather than full panels.
 mode = "dark"
@@ -19,10 +19,10 @@ light_foreground = "#d4be9a"  # soft light text used by existing ports
 bright_foreground = "#ebdbb2"
 
 # Omarchy needs semantic and ANSI slots beyond Verdigris's six core colors.
-# The extended set supplies teal, deep copper, and ink violet. Red uses the
-# Ghostty port's bright error tone: oxblood is too dark for error text on this
-# background. Blue/green brighten in their bright ANSI slots.
-red = "#fb4934"
+# The extended set supplies teal, deep copper, and ink violet. Red uses
+# oxblood's supporting text tint; the darker base is reserved for fills.
+# Red, blue and green brighten in their bright ANSI slots.
+red = "#c66f70"            # oxblood-text
 yellow = "#e6bf86"            # ochre
 orange = "#b9805f"            # deep-copper
 green = "#689d6a"             # patina
@@ -31,7 +31,7 @@ blue = "#458588"              # teal
 magenta = "#8989b0"           # ink-violet
 brown = "#665c54"             # ashbronze
 
-bright_red = "#fb4934"
+bright_red = "#d47b7c"     # oxblood-bright
 bright_yellow = "#e6bf86"
 bright_green = "#8ec07c"      # fern
 bright_cyan = "#83a598"
